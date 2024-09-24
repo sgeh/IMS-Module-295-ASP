@@ -12,60 +12,51 @@
 <body>
     <h1>Calculator</h1>
     @{
-        string leftOp = "";
-        string rightOp = "";
-        double leftOpAsDouble = 0;
-        double rightOpAsDouble = 0;
-        double result = 0;
-        bool hasError = false;
-
-        if (Request.HasFormContentType)
+        if (!Request.HasFormContentType)
+        {
+            <form action="~/calculator" method="post">
+                <div>
+                    <label>
+                        <div>Left Operand:</div>
+                        <input type="number" name="left-op" value="" step="0.00000000000001" required>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <div>Operator:</div> +
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <div>Right Operand:</div>
+                        <input type="number" name="right-op" value="" step="0.00000000000001" required>
+                    </label>
+                </div>
+                <button>Calculate</button>
+            </form>
+        }
+        else
         {
             try
             {
-                leftOp = Request.Form["left-op"];
-                rightOp = Request.Form["right-op"];
-                leftOpAsDouble = Convert.ToDouble(leftOp);
-                rightOpAsDouble = Convert.ToDouble(rightOp);
-                result = leftOpAsDouble + rightOpAsDouble;
+                string leftOp = Request.Form["left-op"];
+                string rightOp = Request.Form["right-op"];
+                double leftOpAsDouble = Convert.ToDouble(leftOp);
+                double rightOpAsDouble = Convert.ToDouble(rightOp);
+                double result = leftOpAsDouble + rightOpAsDouble;
+
+                <div>
+                    <label>
+                        <div>Resultat:</div>
+                        <span>@result</span>
+                    </label>
+                </div>
             }
             catch
             {
-                hasError = true;
+                <div>Ungültige Eingabe!</div>
             }
-        }
-
-        <form action="~/calculator" method="post">
-            <div>
-                <label>
-                    <div>Left Operand:</div>
-                    <input type="number" name="left-op" value="@leftOp" step="0.00000000000001" required>
-                </label>
-            </div>
-            <div>
-                <label>
-                    <div>Operator:</div> +
-                </label>
-            </div>
-            <div>
-                <label>
-                    <div>Right Operand:</div>
-                    <input type="number" name="right-op" value="@rightOp" step="0.00000000000001" required>
-                </label>
-            </div>
-            @{
-                if (!hasError && Request.HasFormContentType)
-                {
-                    <div>
-                        <label>
-                            <div></div>
-                            <span>= @result</span>
-                        </label>
-                    </div>
-                }
-            }
-            <button>Calculate</button>
-        </form>
+        }       
     }
 </body>
 </html>

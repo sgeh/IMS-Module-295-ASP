@@ -11,66 +11,67 @@
 <body>
     <h1>BMI Calculator</h1>
     @{
-        string height = Request.Query["height"];
-        string weight = Request.Query["weight"];
-        double heightAsDouble;
-        double weightAsDouble;
-
-        try // validate height (optional)
+        if (!Request.Query.ContainsKey("height") || !Request.Query.ContainsKey("weight"))
         {
-            heightAsDouble = Convert.ToDouble(height);
-
-            if (heightAsDouble < 0.3 || heightAsDouble > 2.5)
-            {
-                heightAsDouble = 0;
-            }
-        }
-        catch { heightAsDouble = 0; }
-
-        try // validate weight (optional)
-        {
-            weightAsDouble = Convert.ToDouble(weight);
-
-            if (weightAsDouble < 3 || weightAsDouble > 150)
-            {
-                weightAsDouble = 0;
-            }
-        }
-        catch { weightAsDouble = 0; }
-
-
-        if (heightAsDouble != 0 && weightAsDouble != 0)
-        {
-            double bmi = weightAsDouble / (heightAsDouble * heightAsDouble);
-            <h2>Berechneter BMI:</h2>
-            <div>@bmi</div>
-            <div><a href="./bmi">Neue Berechnung</a></div>
-        }
-        else
-        {
+            /* hier Formular des BMI.cshtml darstellen */
             <form action="~/bmi">
                 <div>
                     <label>
                         Grösse [m]:
-                        <input type="number" name="height" min="0.30" max="2.50" value="@height" step="0.001">
-                        @if (height != null && heightAsDouble == 0)
-                        {
-                            <span class="form-error">Ungültige Grösse</span>
-                        }
+                        <input type="number" name="height" min="0.30" max="2.50" value="" step="0.001">
                     </label>
                 </div>
                 <div>
                     <label>
                         Gewicht [kg]:
-                        <input type="number" name="weight" min="3" max="150" value="@weight" step="1">
-                        @if (weight != null && weightAsDouble == 0)
-                        {
-                            <span class="form-error">Ungültiges Gewicht</span>
-                        }
+                        <input type="number" name="weight" min="3" max="150" value="" step="1">
                     </label>
                 </div>
                 <button>Calculate</button>
             </form>
+        }
+        else
+        {
+            /* hier Logik aus dem BMI-Calc.cshtml einfügen */
+            string height = Request.Query["height"];
+            string weight = Request.Query["weight"];
+            double heightAsDouble;
+            double weightAsDouble;
+
+            try // validate height (optional)
+            {
+                heightAsDouble = Convert.ToDouble(height);
+
+                if (heightAsDouble < 0.3 || heightAsDouble > 2.5)
+                {
+                    heightAsDouble = 0;
+                }
+            }
+            catch { heightAsDouble = 0; }
+
+            try // validate weight (optional)
+            {
+                weightAsDouble = Convert.ToDouble(weight);
+
+                if (weightAsDouble < 3 || weightAsDouble > 150)
+                {
+                    weightAsDouble = 0;
+                }
+            }
+            catch { weightAsDouble = 0; }
+
+
+            if (heightAsDouble != 0 && weightAsDouble != 0)
+            {
+                double bmi = weightAsDouble / (heightAsDouble * heightAsDouble);
+                <h2>Berechneter BMI:</h2>
+                <div>@bmi</div>
+                <div><a href="./bmi">Neue Berechnung</a></div>
+            }
+            else
+            {
+                <div>Ungültige Eingabe!</div>
+            }
         }
     }
 </body>
