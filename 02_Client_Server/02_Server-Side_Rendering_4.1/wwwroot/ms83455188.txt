@@ -1,5 +1,0 @@
-﻿{
-  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
-  "Domain": "mcdark.ch",
-  "Id": "5d96ffbb-755e-431d-85d1-fd2ba737a8ab"
-}
