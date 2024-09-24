@@ -1,0 +1,39 @@
+﻿@page
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loopback</title>
+    <link rel="stylesheet" href="~/styles/index.css">
+</head>
+<body>
+    <h1>@Request.Query["first-name"] @Request.Query["name"]</h1>
+    <section>
+        <header>
+            <h2>Request Headers</h2>
+        </header>
+
+        <ul>
+        @foreach (var x in Request.Headers)
+        {
+            <li>@x</li>
+        }
+        </ul>
+    </section>
+
+    <section>
+        <header>
+            <h2>Query Paramaters</h2>
+        </header>
+
+        <ul>
+            @foreach (var x in Request.Query)
+            {
+                <li>@x</li>
+            }
+        </ul>
+    </section>
+</body>
+</html>

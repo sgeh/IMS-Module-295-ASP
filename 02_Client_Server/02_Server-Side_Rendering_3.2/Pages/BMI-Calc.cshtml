@@ -1,0 +1,43 @@
+﻿@page
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Berechnung</title>
+    <link rel="stylesheet" href="~/styles/index.css">
+</head>
+
+<body>
+    <h1>BMI Calculator - Berechnung</h1>
+    <section>
+        <header>
+            <h2>Ihr BMI lautet:</h2>
+        </header>
+
+        @try
+        {
+            string height = Request.Query["height"];
+            string weight = Request.Query["weight"];
+
+            double heightAsDouble = Convert.ToDouble(height);
+            double weightAsDouble = Convert.ToDouble(weight);
+            double bmi = weightAsDouble / (heightAsDouble * heightAsDouble);
+
+            if (bmi > 10)
+            {
+                <div>@bmi</div>
+            }
+            else
+            {
+                <div>Ungültige Eingabe!</div>
+            }
+        }
+        catch
+        {
+            <div>Ungültige Eingabe!</div>
+        }
+    </section>
+</body>
+</html>

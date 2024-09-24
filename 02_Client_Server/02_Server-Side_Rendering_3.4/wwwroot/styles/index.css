@@ -1,0 +1,7 @@
+﻿label {
+    display: flex;
+    flex-direction: row;
+}
+label > div {
+    width: 150px;
+}

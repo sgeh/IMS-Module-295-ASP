@@ -1,0 +1,21 @@
+﻿@page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Test</title>
+</head>
+<body>
+    <h1>Session Management</h1>
+    @{
+        HttpContext.Session.SetString("session_key", "data");
+
+        var cookieOptions = new CookieOptions
+            {
+                Expires = DateTime.Now.AddDays(30)
+            };
+        Response.Cookies.Append("new_cookie", "my-cookie-value", cookieOptions);
+    }    
+</body>
+</html>

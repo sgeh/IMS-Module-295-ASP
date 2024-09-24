@@ -1,0 +1,26 @@
+﻿@page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Dateneingabe</title>
+    <link rel="stylesheet" href="~/styles/index.css">
+</head>
+<body>
+    <h1>BMI Calculator - Dateneingabe</h1>
+    <form action="~/bmi-calc">
+        <div>
+            <label>Grösse [m]:
+                <input type="number" name="height" min="0.30" max="2.50" step="0.001" required>
+            </label>
+        </div>
+        <div>
+            <label>Gewicht [kg]: 
+                <input type="number" name="weight" min="3" max="150" step="1" required>
+            </label>
+        </div>
+        <button>Calculate</button>
+    </form>
+</body>
+</html>

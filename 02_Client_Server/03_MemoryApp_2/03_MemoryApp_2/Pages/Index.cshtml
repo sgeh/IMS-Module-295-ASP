@@ -1,0 +1,68 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Server Health App</title>
+    <script src="~/scripts/index.js" type="module"></script>
+</head>
+<body>
+    <header><h1>Server Health</h1></header>
+    <main>
+        <h2>Server Info</h2>
+        <table border="0">
+            <tbody>
+                <tr>
+                    <td>Process Id</td>
+                    <td>@Environment.ProcessId</td>
+                </tr>
+                <tr>
+                    <td>Process Path</td>
+                    <td>@Environment.ProcessPath</td>
+                </tr>
+                <tr>
+                    <td>Processor Count</td>
+                    <td>@Environment.ProcessorCount</td>
+                </tr>
+                <tr>
+                    <td>Directory</td>
+                    <td>@Environment.CurrentDirectory</td>
+                </tr>
+                <tr>
+                    <td>OS Version</td>
+                    <td>@Environment.OSVersion</td>
+                </tr>
+                <tr>
+                    <td>Machine Name</td>
+                    <td>@Environment.MachineName</td>
+                </tr>
+                
+                <tr>
+                    <td>Host</td>
+                    <td>@Request.Host</td>
+                </tr>
+                <tr>
+                    <td>Is HTTPS</td>
+                    <td>@Request.IsHttps</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <h2>Memory Stats</h2>
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th scope="col">Time</th>
+                    <th scope="col">Memory total</th>
+                    <th scope="col">Memory used</th>
+                    <th scope="col">Memory free</th>
+                </tr>
+            </thead>
+            <tbody id="table-data">
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

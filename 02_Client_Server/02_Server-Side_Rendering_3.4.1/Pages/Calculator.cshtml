@@ -1,0 +1,109 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="~/styles/index.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    @{
+        string leftOp = "";
+        string rightOp = "";
+        string op = "";
+        double leftOpAsDouble = 0;
+        double rightOpAsDouble = 0;
+        double result = 0;
+        bool hasError = false;
+
+        if (Request.HasFormContentType)
+        {
+            try
+            {
+                leftOp = Request.Form["left-op"];
+                rightOp = Request.Form["right-op"];
+                op = Request.Form["op"];
+                leftOpAsDouble = Convert.ToDouble(leftOp);
+                rightOpAsDouble = Convert.ToDouble(rightOp);
+
+                switch (op)
+                {
+                    case "+":
+                        result = leftOpAsDouble + rightOpAsDouble;
+                        break;
+                    case "-":
+                        result = leftOpAsDouble - rightOpAsDouble;
+                        break;
+                    case "/":
+                        result = leftOpAsDouble / rightOpAsDouble;
+
+                        if (rightOpAsDouble == 0)
+                        {
+                            hasError = true;
+                        }
+                        break;
+                    case "*":
+                        result = leftOpAsDouble * rightOpAsDouble;
+                        break;
+                }
+            }
+            catch
+            {
+                hasError = true;
+            }
+        }
+
+        <form action="~/calculator" method="post">
+            <div>
+                <label>
+                    <div>Left Operand:</div>
+                    <input type="number" name="left-op" value="@leftOp" step="0.00000000000001" required>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <div>Operator:</div>
+                    <div>
+                        <div><input type="radio" name="op" value="+" @((op == "+") ? "checked" : "")>+</div>
+                        <div><input type="radio" name="op" value="-" @((op == "-") ? "checked" : "")>-</div>
+                        <div><input type="radio" name="op" value="/" @((op == "/") ? "checked" : "")>÷</div>
+                        <div><input type="radio" name="op" value="*" @((op == "*") ? "checked" : "")>×</div>
+                    </div>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <div>Right Operand:</div>
+                    <input type="number" name="right-op" value="@rightOp" step="0.00000000000001" required>
+                </label>
+            </div>
+            @{
+                if (!hasError && Request.HasFormContentType)
+                {
+                    <div>
+                        <label>
+                            <div></div>
+                            <span>= @result</span>
+                        </label>
+                    </div>
+                }
+                
+                if (hasError)
+                {
+                    <div>
+                        <label>
+                            <div></div>
+                            <span>Ungültige Eingabedaten!</span>
+                        </label>
+                    </div>
+                }
+            }
+            <button>Calculate</button>
+        </form>
+    }
+</body>
+</html>

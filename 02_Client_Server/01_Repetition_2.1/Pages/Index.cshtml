@@ -1,0 +1,90 @@
+﻿@page
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1x1 Matrix</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        td, th {
+            text-align: center;
+            width: 30px;
+            font-size: 1rem;
+        }
+
+        td {
+            font-size: 0.75rem;
+        }
+
+        .color-1 { background-color: lightyellow; }
+        .color-2 { background-color: lightsalmon; }
+        .color-3 { background-color: lightpink; }
+        .color-4 { background-color: lightgreen; }
+        .color-5 { background-color: lightblue; }
+        .color-6 { background-color: violet; }
+        .color-7 { background-color: yellow; }
+        .color-8 { background-color: salmon; }
+        .color-9 { background-color: pink; }
+
+        .color-10 {
+            background-color: green;
+            color: white;
+        }
+        .color-11 {
+            background-color: blue;
+            color: white;
+        }
+        .color-12 {
+            background-color: darkviolet;
+            color: white;
+        }
+    </style>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">X</th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
+                <th scope="col">6</th>
+                <th scope="col">7</th>
+                <th scope="col">8</th>
+                <th scope="col">9</th>
+                <th scope="col">10</th>
+                <th scope="col">11</th>
+                <th scope="col">12</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                for (int i = 1; i < 13; ++i) // Reihen
+                {
+                    <tr>
+                        <th scope="row">@i</th>
+
+                        @for (int j = 1; j < 13; ++j) // Spalten
+                        {
+                            int number = j * i;
+                            int color = j;
+                            if (j < i) // optional, Zusatzaufgabe 2.2
+                            {
+                                color = i;
+                            }
+                            <td class="color-@color">@number</td>
+                        }
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>
+</html>

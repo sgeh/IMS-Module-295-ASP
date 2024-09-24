@@ -1,0 +1,31 @@
+﻿@page
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Memory App</title>
+</head>
+<body>
+    <header><h1>API Definition</h1></header>
+    <main>
+        To use the memory API, call <c>/api/memory</c> with method GET.
+        This API will return the data in the following schema:
+        <code>
+            <pre>
+{
+    "total": 16383, // total amount of memory in Mb
+    "used": 9319,   // used memory in Mb
+    "free": 7064    // free memory in Mb
+}
+
+Example:
+async function getMemoryStats() {
+    const request = await fetch('/api/memory');
+    const memoryStats = await request.json();
+    return memoryStats;
+}
+                </pre>
+        </code>
+    </main>
+</body>
+</html>

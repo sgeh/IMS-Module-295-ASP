@@ -1,0 +1,46 @@
+﻿@page
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1x1 Matrix</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .line {
+            display: flex;
+            flex-direction: row;
+            width: 200px;
+            line-height: 2rem;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+    </style>
+    <div>
+    @{
+        string[][] letters = {
+                    new string[] { "A", "B", "C", "D", "E" },
+                    new string[] { "F", "G", "H", "I", "J" },
+                    new string[] { "K", "L", "M", "N", "O" },
+                    new string[] { "P", "Q", "R", "S", "T", "U" },
+                    new string[] { "V", "W", "X", "Y", "Z" },
+            };
+
+        foreach (string[] row in letters)
+        {
+            <div class="line">
+                @foreach (string letter in row)
+                {
+                    <span>@letter</span>
+                }
+            </div>
+        }
+    }
+    </div>
+</body>
+</html>

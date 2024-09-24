@@ -1,0 +1,51 @@
+﻿@page
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1x1 Matrix</title>
+</head>
+<body>
+    <style>
+        td, th {
+            text-align: center;
+        }
+    </style>
+    <table border="1">
+        <thead>
+            <tr>
+                <th scope="col">X</th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
+                <th scope="col">6</th>
+                <th scope="col">7</th>
+                <th scope="col">8</th>
+                <th scope="col">9</th>
+                <th scope="col">10</th>
+                <th scope="col">11</th>
+                <th scope="col">12</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                for (int i = 1; i < 13; ++i)
+                {
+                    <tr>
+                        <th scope="row">@i</th>
+
+                        @for (int j = 1; j < 13; ++j)
+                        {
+                            <td>@(j * i)</td>
+                        }
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>
+</html>
