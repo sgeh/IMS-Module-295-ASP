@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02_Server-Side_Rendering_3.4.2", "02_Server-Side_Rendering_3.4.2.csproj", "{56E5891D-8B67-48D5-9CA8-251CD7A385C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56E5891D-8B67-48D5-9CA8-251CD7A385C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E5891D-8B67-48D5-9CA8-251CD7A385C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E5891D-8B67-48D5-9CA8-251CD7A385C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E5891D-8B67-48D5-9CA8-251CD7A385C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C57EE3B3-30C3-4609-B702-6FF00036232F}
+	EndGlobalSection
+EndGlobal
