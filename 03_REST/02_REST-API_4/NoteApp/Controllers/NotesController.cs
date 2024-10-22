@@ -74,7 +74,7 @@ namespace NoteApp.Controllers
         ///  }
         ///  </code>
         /// </example>
-        /// <returns>Returns all notes in the database.</returns>
+        /// <returns>Returns all notes stored in the database.</returns>
         [HttpGet()]
         public IActionResult GetAll()
         {

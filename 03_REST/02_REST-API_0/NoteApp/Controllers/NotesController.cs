@@ -25,6 +25,30 @@ namespace NoteApp.Controllers
         }
 
         /// <summary>
+        /// GET: api/notes
+        /// </summary>
+        /// <example>
+        ///  <code>
+        ///  async function getNotes() {
+        ///    const request = await fetch('http://localhost:4200/api/notes/', {
+        ///      headers: {
+        ///        'Accept': 'application/json'
+        ///        },
+        ///      method: 'GET'
+        ///    });
+        ///    const data = await request.json();
+        ///    console.log(data);
+        ///  }
+        ///  </code>
+        /// </example>
+        /// <returns>Returns all notes stored in the database.</returns>
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Ok(_notes);
+        }
+
+        /// <summary>
         /// GET: api/notes/5
         /// </summary>
         /// <example>
@@ -44,29 +68,7 @@ namespace NoteApp.Controllers
         /// <param name="id">ID of the note to retrieve.</param>
         /// <returns>Returns the note associated to the given id.</returns>
         /// TODO: add [Http...?] Annotation and uncomment Method definition:
-        ///   public IActionResult Get(long id) { } Method
-
-
-        /// <summary>
-        /// GET: api/notes
-        /// </summary>
-        /// <example>
-        ///  <code>
-        ///  async function getNotes() {
-        ///    const request = await fetch('http://localhost:4200/api/notes/', {
-        ///      headers: {
-        ///        'Accept': 'application/json'
-        ///        },
-        ///      method: 'GET'
-        ///    });
-        ///    const data = await request.json();
-        ///    console.log(data);
-        ///  }
-        ///  </code>
-        /// </example>
-        /// <returns>Returns all notes in the database.</returns>
-        /// TODO: add [Http...?] Annotation and uncomment Method definition:
-        ///   public IActionResult GetAll() { }
+        ///   public IActionResult Get(long id) { }
 
 
         /// <summary>
