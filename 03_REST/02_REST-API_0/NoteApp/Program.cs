@@ -3,8 +3,8 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
-// TODO: Add Controllers Middleware
-// TODO: Add CORS Middleware
+// TODO: Add Controllers Services
+// TODO: Add CORS Services
 
 #endregion
 
