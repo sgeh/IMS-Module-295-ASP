@@ -1,0 +1,34 @@
+﻿@page
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>Pizza App</title>
+</head>
+<body>
+    <header><h1>API Definition</h1></header>
+    <main>
+        To use the Pizza API, call <c>/api/pizza</c> with method GET.
+        This API will return the data in the following schema:
+        <code>
+            <pre>
+[
+    {
+        "name": "Stromboli",
+        "ingredients": "Tomatensauce, veganer Käse, frische Peperoncini, Oliven, Oregano",
+        "description": "Trotz sorgfältiger Verarbeitung können in den Oliven noch vereinzelt Kerne und Kernstücke enthalten sein.",
+        "price", 21
+    }
+]
+
+Example:
+async function getPizza() {
+    const request = await fetch('/api/pizza');
+    const pizzas = await request.json();
+    return pizzas;
+}
+                </pre>
+        </code>
+    </main>
+</body>
+</html>

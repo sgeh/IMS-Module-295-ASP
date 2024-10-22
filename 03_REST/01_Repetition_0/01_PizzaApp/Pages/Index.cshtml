@@ -1,0 +1,52 @@
+﻿@page
+@{
+    var navigation = new[] {
+        new { Name = "Home", Link = "./index" },
+        new { Name = "Login", Link = "./login" },
+        new { Name = "Register", Link = "./register" }
+    };
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <title>Vorlage - Pizza App</title>
+</head>
+<body class="main-content">
+    <header>
+        <div class="header-menu-container">
+            <h1>Chef's Pizza Recipes</h1>
+            <ul class="header-menu">
+                @*
+                    TODO: Auflistung mit Razor Syntax generieren:
+                          Beispielsweise mit @foreach (var navEntry in navigation) { ... }
+                    
+                    Erwarteter Output:
+                    <li><a href="./index">Home</a></li>
+                    <li><a href="./login">Login</a></li>
+                    <li><a href="./register">Register</a></li>
+                *@
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <ul class="pizza-nav">
+        </ul>
+    </nav>
+    <main>
+        <article class="view">
+            <h1>Rezepte</h1>
+            <div id="details-view">
+                <!-- TODO: Hier Pizza-Auflistung mit JavaScript einfügen... -->
+            </div>
+        </article>
+    </main>
+    <footer>The Pizza API is described in&nbsp;<a href="~/api">subsite in /api</a>&nbsp;- Copyright &copy; @DateTime.Now.Year</footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿@page
+@{
+    var navigation = new[] {
+        new { Name = "Home", Link = "./index" },
+        new { Name = "Login", Link = "./login" },
+        new { Name = "Register", Link = "./register" }
+    };
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <script src="~/scripts/index.js" defer></script>
+    <title>Lösung - Pizza App</title>
+</head>
+<body class="main-content">
+    <header>
+        <div class="header-menu-container">
+            <h1>Chef's Pizza Recipes</h1>
+            <ul class="header-menu">
+                @foreach (var navEntry in navigation)
+                {
+                    <li><a href="@navEntry.Link">@navEntry.Name</a></li>
+                }
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <ul class="pizza-nav">
+        </ul>
+    </nav>
+    <main>
+        <article class="view">
+            <h1>Rezepte</h1>
+            <div id="details-view">
+            </div>
+        </article>
+    </main>
+    <footer>The Pizza API is described in&nbsp;<a href="~/api">subsite in /api</a>&nbsp;- Copyright &copy; @DateTime.Now.Year</footer>
+</body>
+</html>
