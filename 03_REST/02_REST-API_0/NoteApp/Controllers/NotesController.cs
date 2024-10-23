@@ -68,8 +68,10 @@ namespace NoteApp.Controllers
         /// </example>
         /// <param name="id">ID of the note to retrieve.</param>
         /// <returns>Returns the note associated to the given id.</returns>
-        /// TODO: add [Http...?] Annotation and uncomment Method definition:
-        ///   public IActionResult Get(long id) { }
+        // TODO: add [HttpGet(...?)] Annotation and uncomment Method definition:
+        // public IActionResult Get(long id)
+        // {
+        // }
 
 
         /// <summary>
@@ -93,8 +95,10 @@ namespace NoteApp.Controllers
         /// </example>
         /// <param name="note">Note data to be stored.</param>
         /// <returns>Returns the created note.</returns>
-        /// TODO: add [Http...?] Annotation and uncomment Method definition:
-        ///   public IActionResult Post(Note note) { }
+        // TODO: add [Http...?] Annotation and uncomment Method definition:
+        // public IActionResult Post(Note note)
+        // {
+        // }
 
 
         /// <summary>
@@ -119,8 +123,10 @@ namespace NoteApp.Controllers
         /// <param name="id">ID of the note to be edited.</param>
         /// <param name="note">Note data to be stored.</param>
         /// <returns>Nothing, see HTTP status code.</returns>
-        /// TODO: add [Http...?] Annotation and uncomment Method definition:
-        ///   public IActionResult Put([FromRoute] long id, [FromBody] Note note)
+        // TODO: add [Http...?] Annotation and uncomment Method definition:
+        // public IActionResult Put([FromRoute] long id, [FromBody] Note note)
+        // {
+        // }
 
 
         /// <summary>
@@ -143,7 +149,9 @@ namespace NoteApp.Controllers
         /// </example>
         /// <param name="id">ID of the note to be deleted.</param>
         /// <returns>Nothing, see HTTP status code.</returns>
-        /// TODO: add [Http...?] Annotation and uncomment Method definition:
-        ///   public IActionResult Delete(long id) { }
+        // TODO: add [Http...?] Annotation and uncomment Method definition:
+        // public IActionResult Delete(long id)
+        // {
+        // }
     }
 }
