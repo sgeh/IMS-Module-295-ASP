@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
-//builder.Services.AddControllers();
+builder.Services.AddControllers();
 
 // needed for API access through the API client; see UseCors()
 builder.Services.AddCors(options =>

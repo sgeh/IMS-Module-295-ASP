@@ -13,6 +13,7 @@ namespace NoteApp.Controllers
 
 
     [Route("api/[controller]")]
+    [Produces("application/json")]
     [ApiController]
     public class NotesController : ControllerBase
     {
