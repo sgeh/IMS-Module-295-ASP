@@ -10,9 +10,9 @@ function asText(strings) {
         txt += str;
         if (idx < args.length) {
             txt += String(args[idx])
-                .replace(/&/g, '&amp;') // codiert & zu &amp;
-                .replace(/</g, '&lt;')  // codiert < zu &lt; 
-                .replace(/>/g, '&gt;'); // codiert > zu &gt; 
+                .replace(/&/g, '&amp;') // encodes & to &amp;
+                .replace(/</g, '&lt;')  // encodes < to &lt; 
+                .replace(/>/g, '&gt;'); // encodes > to &gt; 
         }
     });
     return txt;
