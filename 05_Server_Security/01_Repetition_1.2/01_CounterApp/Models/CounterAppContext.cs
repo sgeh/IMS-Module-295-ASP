@@ -7,6 +7,6 @@ namespace Bwz.Rappi.Models
         public CounterAppContext(DbContextOptions<CounterAppContext> options)
             : base(options) { }
         public DbSet<Log> Logs { get; set; }
-        public DbSet<Counter> Counter { get; set; }
+        public DbSet<CounterState> CounterState { get; set; }
     }
 }

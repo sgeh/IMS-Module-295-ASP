@@ -25,20 +25,17 @@ namespace Bwz.Rappi.CounterApp.Controllers
         [Route("up")]
         public IActionResult Post()
         {
-            _current++;
+            _current++; // TODO: 1.2) Write current value into database
             // TODO: 1) Add Log Entry ( new Log { Date = DateTime.Now, Current = _current } ) to database
             return Ok();
-
-            // TODO: 1.2) Write current value into database
+            
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            var newCounter = new Counter { Current = _current };
+            var newCounter = new Counter { Current = _current }; // TODO: 1.2) Return highest value from database
             return Ok(newCounter);
-
-            // TODO: 1.2) Return current value from database
         }
 
         // TODO: 1.1) Return all Log Entries from database

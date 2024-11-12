@@ -16,7 +16,7 @@ namespace Bwz.Rappi.Data
             if (_context.Database.EnsureCreated())
             {
                 // add intial data
-                _context.Counter.Add(new Counter { Current = 0 });
+                _context.CounterState.Add(new CounterState { Current = 0 });
                 // store everything to database
                 _context.SaveChanges();
             }

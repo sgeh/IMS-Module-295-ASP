@@ -1,7 +1,5 @@
 ﻿using Bwz.Rappi.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace Bwz.Rappi.CounterApp.Controllers
 {
@@ -23,7 +21,7 @@ namespace Bwz.Rappi.CounterApp.Controllers
         [Route("up")]
         public IActionResult Post()
         {
-            var counter = _context.Counter.First();
+            var counter = _context.CounterState.First();
             counter.Current++;
 
             // TODO: 1) Add Log Entry ( new Log { Date = DateTime.Now, Current = _current } ) to database
@@ -40,7 +38,7 @@ namespace Bwz.Rappi.CounterApp.Controllers
         public IActionResult Get()
         {
             // TODO: 1.2) Return current value from database
-            return Ok(_context.Counter.First());
+            return Ok(_context.CounterState.First());
         }
 
         // TODO: 1.1) Return all Log Entries from database
