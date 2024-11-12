@@ -43,7 +43,7 @@ function renderDetailView(id) {
             completed = 'Noch nicht erledigt';
         }
 
-        detailViewHtml = `
+        detailViewHtml = asText`
             <header>
                 <h2>${note.name}</h2>
             </header>
@@ -66,7 +66,7 @@ function renderNavigation() {
     let leftNavHtml = '';
 
     for (let note of notes) {
-        leftNavHtml += `<li><a href="#" onclick="renderDetailView(${note.id})">${note.name}</a></li>`;
+        leftNavHtml += asText`<li><a href="#" onclick="renderDetailView(${note.id})">${note.name}</a></li>`;
     }
     leftNav.innerHTML = leftNavHtml;
 }
